@@ -1,0 +1,60 @@
+{
+    "name": "guideline-gulp",
+    "version": "1.0.0",
+    "description": "Example of gulp for the W3LabKr open source project.",
+    "main": "index.js",
+    "scripts": {
+        "clean:dir": "rm -rf node_modules",
+        "clean:cache": "npm cache clean --force",
+        "clean": "npm run clean:dir && npm run clean:cache",
+        "build": "npm run clean && npm install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/w3labkr/guideline-gulp.git"
+    },
+    "keywords": [
+        "guideline",
+        "gulp"
+    ],
+    "author": "W3LabKr",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/w3labkr/guideline-gulp/issues"
+    },
+    "homepage": "https://github.com/w3labkr/guideline-gulp#readme",
+    "devDependencies": {
+        "@babel/core": "^7.18.6",
+        "@babel/preset-env": "^7.18.6",
+        "@types/gulp-imagemin": "^7.0.3",
+        "autoprefixer": "^10.4.7",
+        "browserslist": "^4.21.1",
+        "cssnano": "^5.1.12",
+        "del": "^6.1.1",
+        "eslint": "^8.18.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.1.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-file-include": "^2.3.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-jsbeautifier": "^3.0.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "js-beautify": "^1.14.4",
+        "merge-stream": "^2.0.0",
+        "postcss": "^8.4.14",
+        "prettier": "^2.7.1",
+        "stylelint": "^14.9.1",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-rational-order": "^0.1.2",
+        "stylelint-config-recommended": "^8.0.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "stylelint-csstree-validator": "^2.0.0",
+        "stylelint-order": "^5.0.0",
+        "stylelint-prettier": "^2.0.0"
+    }
+}

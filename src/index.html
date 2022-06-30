@@ -1,0 +1,37 @@
+@@include_once('header.html', {
+"bodyClass": "no-sidebar",
+"templateName": "content",
+})
+
+<!-- @@include_once('template-parts/hero.html') -->
+<!-- @@include_once('template-parts/breadcrumb.html') -->
+
+<div id="main-content" class="main-area">
+  <div class="main-inner container-fluid">
+
+    <!-- @@include_once('sidebar-1.html') -->
+
+    <main id="primary" class="site-main">
+      <div class="container">
+        <h1>Shuffle Words</h1>
+        <p></p>
+
+        <div class="row">
+          <div class="col col-md-6 col-sm-12">
+            <textarea id="textarea" rows="20" style="width: 100%;padding: 10px 15px;">홍길동 임꺽정 세종대왕 이순신 신사임당
+광개토대와 연개소문 강감찬</textarea>
+          </div>
+          <div class="col col-md-6 col-sm-12">
+            <div id="pre" style="white-space: pre-line;padding: 10px 15px;border: 1px solid;">홍길동 임꺽정 세종대왕 이순신 신사임당
+              광개토대와 연개소문 강감찬</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- @@include_once('sidebar-2.html') -->
+
+  </div><!-- .container -->
+</div><!-- #main-content -->
+
+@@include_once('footer.html')
