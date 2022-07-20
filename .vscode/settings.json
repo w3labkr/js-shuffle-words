@@ -50,8 +50,8 @@
     },
 
     "stylelint.enable": true,
-    "stylelint.validate": ["css", "less", "postcss"],
-    "stylelint.snippet": ["css", "less", "postcss"],
+    "stylelint.validate": ["css", "scss", "less", "postcss"],
+    "stylelint.snippet": ["css", "scss", "less", "postcss"],
 
     "autoprefixer.formatOnSave": false,
     "autoprefixer.ignoreFiles": [
@@ -66,11 +66,11 @@
         ]
     },
 
-    "css.validate": false,
-    "css.lint.emptyRules": "ignore",
-    "css.lint.unknownProperties": "ignore",
+    "scss.validate": false,
+    "scss.lint.emptyRules": "ignore",
+    "scss.lint.unknownProperties": "ignore",
 
-    "[css]": {
+    "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.tabSize": 2,
         "editor.formatOnSave": false,

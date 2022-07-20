@@ -4,28 +4,26 @@
   }
 
   function init() {
-    var textarea = document.getElementById('textarea');
-    var pre = document.getElementById('pre');
-
-    textarea.addEventListener('input', handleInput.bind(null, pre));
+    document.getElementById('submit-button').addEventListener('click', handleSubmit);
   }
 
-  function handleInput(pre, e) {
-    var lines = e.target.value.replace(/\r\n/g, '\n').split('\n');
-    var result = [];
+  function handleSubmit(e) {
+    let lines = document.getElementById('before-textarea').value.replace(/\r\n/g, '\n').split('\n');
+    let result = [];
 
     lines.forEach(function (words) {
-      var word = randomArrayShuffle(words.split(' '));
+      let word = randomArrayShuffle(words.split(' '));
       result.push(word.join(' '));
     });
 
-    pre.innerHTML = result.join('\n');
+    document.getElementById('after-textarea').innerHTML = result.join('\n');
   }
 
   function randomArrayShuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
+    let currentIndex = array.length;
+    let temporaryValue;
+    let randomIndex;
+
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
