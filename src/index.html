@@ -12,19 +12,22 @@
     <!-- @@include_once('sidebar-1.html') -->
 
     <main id="primary" class="site-main">
-      <div class="container">
-        <h1>Shuffle Words</h1>
-        <p></p>
+      <div class="row">
+        <div class="form-group col-6">
 
-        <div class="row">
-          <div class="col col-md-6 col-sm-12">
-            <textarea id="textarea" rows="20" style="width: 100%;padding: 10px 15px;">홍길동 임꺽정 세종대왕 이순신 신사임당
-광개토대와 연개소문 강감찬</textarea>
-          </div>
-          <div class="col col-md-6 col-sm-12">
-            <div id="pre" style="white-space: pre-line;padding: 10px 15px;border: 1px solid;">홍길동 임꺽정 세종대왕 이순신 신사임당
-              광개토대와 연개소문 강감찬</div>
-          </div>
+          <label for="before-textarea" class="mb-1">BEFORE</label>
+          <textarea id="before-textarea" class="form-control mb-3" rows="16" style="resize:none;">Microsoft Jira Trello Google Apple Amazon</textarea>
+          <button type="button" id="submit-button" class="btn btn-primary btn-lg w-100">Run</button>
+
+        </div>
+        <div class="form-group col-6">
+
+          <label for="after-textarea" class="mb-1">AFTER</label>
+          <textarea id="after-textarea" class="form-control mb-3" rows="16" style="resize:none;"></textarea>
+          <button type="button" id="copy-button" class="btn btn-secondary btn-lg w-100"
+            data-clipboard-target="#after-textarea">Copy to
+            clipboard</button>
+
         </div>
       </div>
     </main>
