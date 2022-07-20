@@ -25,7 +25,7 @@ const uglify = require('gulp-uglify');
 
 function version() {
   return src('./package.json')
-    .pipe(bump({ type: 'minor' })) // major, minor, patch
+    .pipe(bump({ type: 'patch' })) // major, minor, patch
     .pipe(dest('./'));
 }
 
@@ -43,18 +43,18 @@ function banner(pkg) {
 }
 
 function clean() {
-  return del(['dist/']);
+  return del(['docs/']);
 }
 
 function htmlTranspile() {
   return src(['src/index.html'])
     .pipe(fileinclude({ prefix: '@@', basepath: '@file' }))
     .pipe(beautify())
-    .pipe(dest('dist'));
+    .pipe(dest('docs'));
 }
 
 function imageTranspile() {
-  return src(['src/assets/images/**/*']).pipe(imagemin()).pipe(dest('dist/assets/images'));
+  return src(['src/assets/images/**/*']).pipe(imagemin()).pipe(dest('docs/assets/images'));
 }
 
 function sassTranspile() {
@@ -66,7 +66,7 @@ function sassTranspile() {
     .pipe(postcss([autoprefixer()]))
     .pipe(header(banner(pkg), { pkg: pkg }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist/assets/css'));
+    .pipe(dest('docs/assets/css'));
 }
 
 function sassMinify() {
@@ -79,7 +79,7 @@ function sassMinify() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner(pkg), { pkg: pkg }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist/assets/css'));
+    .pipe(dest('docs/assets/css'));
 }
 
 function jsTranspile() {
@@ -90,7 +90,7 @@ function jsTranspile() {
     .pipe(babel())
     .pipe(header(banner(pkg), { pkg: pkg }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist/assets/js'));
+    .pipe(dest('docs/assets/js'));
 }
 
 function jsMinify() {
@@ -103,12 +103,12 @@ function jsMinify() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner(pkg), { pkg: pkg }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist/assets/js'));
+    .pipe(dest('docs/assets/js'));
 }
 
 function publish() {
   return mergeStream(
-    src(['src/vendor/**/*']).pipe(dest('dist/vendor')),
+    src(['src/assets/vendors/**/*']).pipe(dest('docs/assets/vendors')),
     src('CHANGELOG.md')
       .pipe(conventionalChangelog({ preset: 'conventionalcommits', releaseCount: 0 }))
       .pipe(dest('./'))
