@@ -25,7 +25,7 @@ const uglify = require('gulp-uglify');
 
 function version() {
   return src('./package.json')
-    .pipe(bump({ type: 'minor' })) // major, minor, patch
+    .pipe(bump({ type: 'patch' })) // major, minor, patch
     .pipe(dest('./'));
 }
 

@@ -1,33 +1,41 @@
 (function (window, document, undefined) {
-  /* global ClipboardJS */
+  /* global bootstrap, ClipboardJS */
 
   function initialize() {
     init();
   }
 
   function init() {
-    document.getElementById('copy-button').addEventListener('click', () => {
-      handleShuffle();
-      ClipboardJS.copy(document.getElementById('result'));
+    const toastLiveElement = document.getElementById('liveToast');
+    const ClipboardElement = document.getElementById('result');
+
+    document.getElementById('submit').addEventListener('click', () => {
+      shuffleWords();
+
+      ClipboardJS.copy(ClipboardElement);
+
+      const toast = new bootstrap.Toast(toastLiveElement);
+      toast.show();
     });
   }
 
-  function handleShuffle() {
+  function shuffleWords() {
+    const prefix = document.getElementById('prefix');
+    const suffix = document.getElementById('suffix');
+
     let lines = document.getElementById('text').value.replace(/\r\n/g, '\n').split('\n');
-    let prefix = document.getElementById('prefix').value;
-    let suffix = document.getElementById('suffix').value;
     let result = [];
 
     lines.forEach(function (words) {
       let word = randomArrayShuffle(words.split(' '));
       let text = '';
 
-      if (prefix.length) {
-        word.unshift(prefix);
+      if (prefix.value.length) {
+        word.unshift(prefix.value);
       }
 
-      if (suffix.length) {
-        word.push(suffix);
+      if (suffix.value.length) {
+        word.push(suffix.value);
       }
 
       result.push(word.join(' '));
