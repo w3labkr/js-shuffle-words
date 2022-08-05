@@ -1,5 +1,7 @@
 # JS Shuffle Words
 
+> `js-shuffle-words` has been moved to [js-smart-shuffle-words](https://github.com/w3labkr/js-smart-shuffle-words).
+
 Shuffle the words on each line.
 
 ## Directory Structure
