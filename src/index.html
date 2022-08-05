@@ -15,27 +15,27 @@
       <div class="row">
         <div class="form-group col-6">
 
-          <label for="text" class="mb-1">Text</label>
+          <label for="text" class="mb-1">상품명</label>
           <textarea id="text" class="form-control mb-3" rows="9" style="resize:none;">Microsoft Jira Trello Google Apple Amazon</textarea>
 
         </div>
         <div class="form-group col-6">
 
-          <label for="prefix" class="mb-1">Prefix</label>
-          <input id="prefix" class="form-control mb-3" value="" placeholder="Some text here..." />
+          <label for="prefix" class="mb-1">문자열 앞 추가</label>
+          <input id="prefix" class="form-control mb-3" value="" placeholder="문자를 입력해 주세요." />
 
-          <label for="suffix" class="mb-1">Suffix</label>
-          <input id="suffix" class="form-control mb-3" value="" placeholder="Some text here..." />
+          <label for="suffix" class="mb-1">문자열 뒤 추가</label>
+          <input id="suffix" class="form-control mb-3" value="" placeholder="문자를 입력해 주세요." />
 
-          <button type="button" id="copy-button" class="btn btn-primary btn-lg w-100"
-            data-clipboard-target="#result">Run & Copy</button>
+          <button type="button" id="submit" class="btn btn-primary btn-lg w-100 mb-1"
+            data-clipboard-target="#result">상품명 변경 후 자동 복사</button>
 
         </div>
       </div>
       <div class="row">
         <div class="form-group col-12">
 
-          <label for="result" class="mb-1">Result</label>
+          <label for="result" class="mb-1">상품명 수정 후</label>
           <textarea id="result" class="form-control mb-3" rows="9" style="resize:none;"></textarea>
 
         </div>
