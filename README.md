@@ -1,5 +1,7 @@
 # JS Shuffle Words
 
+Shuffle the words on each line.
+
 ## Directory Structure
 
 ```text
