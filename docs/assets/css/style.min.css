@@ -1,7 +1,7 @@
 /*!
  * Copyright (c) 2022 W3LabKr
  * js-shuffle-words - 
- * @version v0.2.1
+ * @version v0.2.2
  * @link https://github.com/w3labkr/js-shuffle-words#readme
  * @license ISC
  */
