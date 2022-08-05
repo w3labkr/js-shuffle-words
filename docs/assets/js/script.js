@@ -1,18 +1,30 @@
+/*!
+ * Copyright (c) 2022 W3LabKr
+ * js-shuffle-words - 
+ * @version v0.2.0
+ * @link https://github.com/w3labkr/js-shuffle-words#readme
+ * @license ISC
+ */
+"use strict";
+
 (function (window, document, undefined) {
+  /* global ClipboardJS */
   function initialize() {
     init();
   }
 
   function init() {
-    document.getElementById('copy-button').addEventListener('click', handleSubmit);
+    document.getElementById('copy-button').addEventListener('click', () => {
+      handleShuffle();
+      ClipboardJS.copy(document.getElementById('result'));
+    });
   }
 
-  function handleSubmit(e) {
+  function handleShuffle() {
     let lines = document.getElementById('text').value.replace(/\r\n/g, '\n').split('\n');
     let prefix = document.getElementById('prefix').value;
     let suffix = document.getElementById('suffix').value;
     let result = [];
-
     lines.forEach(function (words) {
       let word = randomArrayShuffle(words.split(' '));
       let text = '';
@@ -27,7 +39,6 @@
 
       result.push(word.join(' '));
     });
-
     document.getElementById('result').innerHTML = result.join('\n');
   }
 
@@ -43,8 +54,10 @@
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
+
     return array;
   }
 
   initialize();
 })(window, document);
+//# sourceMappingURL=script.js.map

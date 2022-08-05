@@ -1,13 +1,18 @@
 (function (window, document, undefined) {
+  /* global ClipboardJS */
+
   function initialize() {
     init();
   }
 
   function init() {
-    document.getElementById('copy-button').addEventListener('click', handleSubmit);
+    document.getElementById('copy-button').addEventListener('click', () => {
+      handleShuffle();
+      ClipboardJS.copy(document.getElementById('result'));
+    });
   }
 
-  function handleSubmit(e) {
+  function handleShuffle() {
     let lines = document.getElementById('text').value.replace(/\r\n/g, '\n').split('\n');
     let prefix = document.getElementById('prefix').value;
     let suffix = document.getElementById('suffix').value;
