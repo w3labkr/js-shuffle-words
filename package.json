@@ -1,13 +1,15 @@
 {
     "name": "js-shuffle-words",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "clean:dir": "rm -rf node_modules",
         "clean:cache": "npm cache clean --force",
         "clean": "npm run clean:dir && npm run clean:cache",
-        "build": "npm run clean && npm install"
+        "build": "npm run clean && npm install",
+        "dev": "gulp watch",
+        "dist": "gulp build"
     },
     "repository": {
         "type": "git",
